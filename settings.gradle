@@ -1,4 +1,5 @@
 rootProject.name = 'spring-boot-learn'
 include 'learn1-redis'
 include 'learn2-cache-redis'
+include 'learn3-events'
 
