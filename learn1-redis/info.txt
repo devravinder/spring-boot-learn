@@ -1,0 +1,3 @@
+1. Understanding Redis features
+2. Basic Redis is different form Redis Search , Redis Stack
+3. In this project...we tried to understand only most used features of Redis

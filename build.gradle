@@ -1,0 +1,50 @@
+plugins {
+	id 'java'
+	alias(libs.plugins.springBoot) apply false
+	alias(libs.plugins.springManagement) apply false
+}
+
+
+allprojects {
+	group = 'com.paravar'
+	version = System.getenv('BUILD_SOURCEVERSION') ?: '0.0.1-SNAPSHOT'
+}
+
+
+subprojects { Project sub -> {
+	apply plugin: 'java'
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'org.springframework.boot'
+
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+
+		compileOnly 'org.projectlombok:lombok'
+		annotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	}
+
+	configurations {
+		compileOnly {
+			extendsFrom annotationProcessor
+		}
+	}
+
+	test {
+		useJUnitPlatform()
+	}
+
+	java {
+		toolchain {
+			languageVersion = JavaLanguageVersion.of(23)
+		}
+	}
+}
+}
+
+
