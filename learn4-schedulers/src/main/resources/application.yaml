@@ -1,0 +1,54 @@
+spring:
+  task:
+    scheduling:
+      pool:
+        size: 3
+
+  quartz:
+    properties:
+      org.quartz:
+        threadPool:
+          class: org.quartz.simpl.SimpleThreadPool
+          threadCount: 10
+          threadPriority: 5
+        scheduler:
+          instanceName: SpringScheduler
+          instanceId: AUTO
+        jobStore:
+          class: org.quartz.impl.jdbcjobstore.JobStoreTX
+          driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+          useProperties: false
+          dataSource: quartzDataSource
+          tablePrefix: QRTZ_
+          isClustered: false
+
+        dataSource:
+          quartzDataSource:
+            provider: hikaricp
+            URL: jdbc:h2:file:./learn4-schedulers/src/main/resources/data.db
+            driver: org.h2.Driver
+            user: admin
+            password: admin
+            maxConnections: 5
+
+
+# the below configuration is optional
+  datasource:
+    url: jdbc:h2:file:./learn4-schedulers/src/main/resources/data.db
+    driver-class-name: org.h2.Driver
+    username: admin
+    password: admin
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+    
+  

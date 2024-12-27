@@ -1,0 +1,1 @@
+1. if we don't provide any cache type & but enable cache, then default cache type is used ( in memory )

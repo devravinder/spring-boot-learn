@@ -1,0 +1,3 @@
+1. spring boot provides schedulers by default... no dependency required
+2. using persistence for schedule tasks is optional ( recommended for critical tasks )
+   1. using 'quartz' with 'h2'
