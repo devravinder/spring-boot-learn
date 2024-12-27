@@ -6,6 +6,8 @@ spring:
 
   quartz:
     properties:
+      # reference https://docs.spring.io/spring-boot/reference/io/quartz.html
+      # reference https://www.quartz-scheduler.org/documentation/quartz-2.3.0/configuration/?utm_source=chatgpt.com
       org.quartz:
         threadPool:
           class: org.quartz.simpl.SimpleThreadPool
