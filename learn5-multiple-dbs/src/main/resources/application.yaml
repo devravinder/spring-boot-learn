@@ -1,0 +1,32 @@
+spring:
+
+  datasource:
+    postgres:
+      jdbc-url: jdbc:postgresql://localhost:5432/local
+      driver-class-name: org.postgresql.Driver
+      username: postgres
+      password: postgres
+
+      hibernate:
+        # for query syntax ( query translation )
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        hbm2ddl:
+        # auto: validate
+          auto: update
+
+    hsqldb:
+      jdbc-url: jdbc:hsqldb:hsql://localhost:9001/hsql
+      driver-class-name: org.hsqldb.jdbc.JDBCDriver
+      username: hsql
+      password: hsql
+
+      hibernate:
+        dialect: org.hibernate.dialect.HSQLDialect
+        hbm2ddl:
+          # auto: validate
+          auto: update
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
