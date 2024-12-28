@@ -1,0 +1,28 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "4",
+        "author": "Ravinder Reddy",
+        "changes": [
+          {
+            "addUniqueConstraint": {
+              "tableName": "users",
+              "columnNames": "username",
+              "constraintName": "unique_username"
+            }
+          }
+        ],
+        "rollback": [
+          {
+            "dropUniqueConstraint": {
+              "constraintName": "unique_username",
+              "tableName": "users",
+              "columnNames": "username"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

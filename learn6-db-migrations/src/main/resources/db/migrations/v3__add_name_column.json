@@ -1,0 +1,25 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "3",
+        "author": "Ravinder Reddy",
+        "changes": [
+          {
+            "addColumn": {
+              "tableName": "users",
+              "columns": [
+                {
+                  "column": {
+                    "name": "name",
+                    "type": "VARCHAR(50)"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -4,4 +4,5 @@ include 'learn2-cache-redis'
 include 'learn3-events'
 include 'learn4-schedulers'
 include 'learn5-multiple-dbs'
+include 'learn6-db-migrations'
 

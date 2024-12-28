@@ -1,0 +1,29 @@
+{
+  "databaseChangeLog": [
+    {
+      "include": {
+        "file": "/db/migrations/v1__create_users_table.json"
+      }
+    },
+    {
+      "include": {
+        "file": "/db/migrations/v2__add_age_column.json"
+      }
+    },
+    {
+      "include": {
+        "file": "/db/migrations/v3__add_name_column.json"
+      }
+    },
+    {
+        "include": {
+            "file": "/db/migrations/v4__add_unique_constraint_to_users.json"
+        }
+    },
+    {
+      "include": {
+        "file": "/db/migrations/v5__drop_unique_constraint.json"
+      }
+    }
+  ]
+}

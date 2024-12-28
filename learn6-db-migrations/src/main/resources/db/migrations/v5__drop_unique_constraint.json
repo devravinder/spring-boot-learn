@@ -1,0 +1,19 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "5",
+        "author": "Ravinder Reddy",
+        "changes": [
+          {
+            "dropUniqueConstraint": {
+              "constraintName": "unique_username",
+              "tableName": "users",
+              "columnNames": "username"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "databaseChangeLog": [
+    {
+      "changeSet": {
+        "id": "2",
+        "author": "Ravinder Reddy",
+        "changes": [
+          {
+            "addColumn": {
+              "tableName": "users",
+              "columns": [
+                {
+                  "column": {
+                    "name": "age",
+                    "type": "INT"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

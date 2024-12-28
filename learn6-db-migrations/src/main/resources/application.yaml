@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/local
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+ # ref: https://contribute.liquibase.com/extensions-integrations/directory/integration-docs/springboot/configuration/
+  liquibase:
+    change-log: classpath:/db/migrations/changelog-master.json
+#    rollback-file: rollback.sql
+
+logging:
+  level:
+    liquibase: DEBUG

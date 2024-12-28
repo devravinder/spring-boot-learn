@@ -1,0 +1,8 @@
+1. to rollback
+    - there are some way to rollback... but they are not easy to maintain/execute
+    - better a new change set to rollback the previous one
+
+
+   eg:
+    - in v4__add_unique_constraint_to_users.json rollback is there...but we are not using it
+    - instead we are using v5__remove_unique_constraint_from_users.json

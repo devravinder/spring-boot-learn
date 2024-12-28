@@ -11,40 +11,39 @@ allprojects {
 }
 
 
-subprojects { Project sub -> {
-	apply plugin: 'java'
-	apply plugin: 'io.spring.dependency-management'
-	apply plugin: 'org.springframework.boot'
+subprojects { Project sub ->
+	{
+		apply plugin: 'java'
+		apply plugin: 'io.spring.dependency-management'
+		apply plugin: 'org.springframework.boot'
 
 
-	repositories {
-		mavenCentral()
-	}
-
-	dependencies {
-
-		compileOnly 'org.projectlombok:lombok'
-		annotationProcessor 'org.projectlombok:lombok'
-		testImplementation 'org.springframework.boot:spring-boot-starter-test'
-		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
-	}
-
-	configurations {
-		compileOnly {
-			extendsFrom annotationProcessor
+		repositories {
+			mavenCentral()
 		}
-	}
 
-	test {
-		useJUnitPlatform()
-	}
+		dependencies {
 
-	java {
-		toolchain {
-			languageVersion = JavaLanguageVersion.of(23)
+			compileOnly 'org.projectlombok:lombok'
+			annotationProcessor 'org.projectlombok:lombok'
+			testImplementation 'org.springframework.boot:spring-boot-starter-test'
+			testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+		}
+
+		configurations {
+			compileOnly {
+				extendsFrom annotationProcessor
+			}
+		}
+
+		test {
+			useJUnitPlatform()
+		}
+
+		java {
+			toolchain {
+				languageVersion = JavaLanguageVersion.of(23)
+			}
 		}
 	}
 }
-}
-
-
