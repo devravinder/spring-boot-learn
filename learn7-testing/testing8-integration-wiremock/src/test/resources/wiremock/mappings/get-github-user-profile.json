@@ -1,0 +1,22 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/users/devravinder"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "jsonBody": {
+          "login": "devravinder",
+          "name": "Ravinder Reddy Kothabad",
+          "twitter_username": "Ravinder__Reddy",
+          "public_repos": 50
+        }
+      }
+    }
+  ]
+}

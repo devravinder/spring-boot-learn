@@ -1,0 +1,23 @@
+To run tests from cmd
+ 1. from root project
+  $ ./gradlew :learn7-testing:testing5-test-containers:test
+
+ 2. for this project
+  $ ../../gradlew test
+=========================================================================
+
+
+Why test containers are needed?
+ 1. Problems with static integration tests
+    - assume we are using a database...and we want to test users count after adding data.
+       But while adding...some other service may add data & count may not match... then test will fail.
+
+     - to solve this, we need to run external services in isolation ( in containers ).
+
+
+ 2. Testing the real dependencies
+     eg:
+      - we can test the integration with real Postgres database
+           instead of h2/in-memory database to mimic the postgres behavior.
+
+ 3. Same developer experience in Local & CI/CD environments

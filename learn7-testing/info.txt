@@ -1,0 +1,104 @@
+1. for unit testing
+     - JUnit 5
+     - AssertJ
+     - Mockito ( for mocking services/objects )
+
+     Junit 5 vs AssertJ
+      - assertJ provides more features for asserting than JUnit
+      - Junit provides good features
+          - Lifecycle methods
+          - Conditional tests
+          - Parallel execution
+          - Test Instance Lifecycle
+          - Parameterized tests
+
+
+2. for integration testing
+     - MockMvc  ( spring framework's , to test our own rest APIs )
+     - restAssured  (3rd part,  to test our own rest APIs )
+     - WireMock ( to mock external APIs )
+     - MockServer ( to mock external APIs )
+
+     WireMock vs MockServer
+     WireMock:
+        - if we need a straightforward tool for stubbing and testing RESTful APIs.
+        - Ease of use and integration with Java/Spring are key priorities.
+        - we can use pre defied json responses
+        - available only for Java
+
+     MockServer:
+      - we require advanced capabilities like proxying, sequential expectations,
+          or dynamic response generation.
+      - we can run as a separate/standalone server or embedded server or in test containers
+      - Flexibility across different protocols and complex testing scenarios is essential.
+      - available for other languages as well
+
+
+3. for E2E testing
+    - Cypress
+    - Playwright
+
+
+4. for Performance Testing
+    - Gatling
+    - JMeter
+    - K6
+
+
+
+
+========================================================================================
+1. How to choose Unit testing or Integration testing?
+   1. if the application is interacting less with external libraries
+       - then more unit testing
+       eg: application with Data Bases & some services
+
+   2. if the application is interacting more with external services
+       - then more integration testing
+       eg: complex micro services application with Redis, ElasticSearch, Kafka, Data Bases
+
+
+2. Try to write more Unit tests for own services
+3. Try to mock the external services ( eg: API response from GitHub )
+
+
+4. Test Driven Development (TDD) Planning
+   - Unit Tests:
+      - Controller Tests
+      - Service Tests
+      - Validator / Formatter Tests
+      - Repository Tests ( for custom queries )
+
+   - Integration Tests:
+     - Controller -> Service -> Repository -> DB/Queue
+     - Mock external service API calls using WireMock/MockServer
+
+
+
+
+5. Always write
+    more Unit tests > Integration tests > E2E tests
+    bzc
+       performance of Unit tests > Integration tests > E2E tests
+       resource usage of Unit tests < Integration tests < E2E tests
+
+
+6. Always write
+    Unit tests for both
+        - happy flow
+        - edge cases
+        - error cases
+
+       i.e write more Unit tests for all the cases
+
+    Integration tests  for
+
+      - happy flow
+      - less error cases
+
+       i.e write more Integration tests for happy flow
+
+=================================================================================
+Stub:
+   - service/component/data that is used in place of real data
+   - mock data
