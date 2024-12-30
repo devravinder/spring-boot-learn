@@ -84,19 +84,25 @@
 
 
 6. Always write
-    Unit tests for both
+    Unit tests for
         - happy flow
         - edge cases
         - error cases
 
        i.e write more Unit tests for all the cases
 
-    Integration tests  for
+    Integration tests for
 
       - happy flow
       - less error cases
 
        i.e write more Integration tests for happy flow
+
+7. for integration testing that data should be known state
+   - so we can write assertions
+   eg:-  if we are writing database integration tests,
+        in which we are doing assertion that data count is 10
+        - then the data in the db should be known state ( 10 records )
 
 =================================================================================
 Stub:
