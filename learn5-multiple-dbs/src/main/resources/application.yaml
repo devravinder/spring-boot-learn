@@ -2,6 +2,7 @@ spring:
 
   datasource:
     postgres:
+      # data source properties
       jdbc-url: jdbc:postgresql://localhost:5432/local
       driver-class-name: org.postgresql.Driver
       username: postgres
@@ -13,8 +14,17 @@ spring:
         hbm2ddl:
         # auto: validate
           auto: update
+      # jpa properties
+      jpa:
+        show-sql: false
+        properties:
+          hibernate:
+            ddl-auto: update
+            format_sql: true
+            use_sql_comments: true
 
     hsqldb:
+      # data source properties
       jdbc-url: jdbc:hsqldb:hsql://localhost:9001/hsql
       driver-class-name: org.hsqldb.jdbc.JDBCDriver
       username: hsql
@@ -24,9 +34,21 @@ spring:
         dialect: org.hibernate.dialect.HSQLDialect
         hbm2ddl:
           # auto: validate
-          auto: update
+          auto: validate
 
-  jpa:
-    show-sql: true
-    hibernate:
-      ddl-auto: update
+      # jpa properties
+      jpa:
+        show-sql: true
+        properties:
+          hibernate:
+            ddl-auto: update
+            format_sql: false
+            use_sql_comments: true
+
+
+
+
+  # Logging levels
+logging.level:
+    org.hibernate.SQL: OFF # DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

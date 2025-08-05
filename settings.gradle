@@ -14,4 +14,5 @@ include 'learn7-testing:testing6-kafka-awaitility'
 include 'learn7-testing:testing7-rabbitmq-awaitility'
 include 'learn7-testing:testing8-integration-wiremock'
 include 'learn7-testing:testing9-integration-mockserver'
+include 'learn8-resiliency'
 

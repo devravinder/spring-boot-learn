@@ -22,6 +22,7 @@ spring:
 
   datasource:
     url: jdbc:h2:file:./learn2-cache-redis/src/main/resources/data.db
+# note: to see the database from h2-console, give absolute path not relative path
     driver-class-name: org.h2.Driver
     username: admin
     password: admin
