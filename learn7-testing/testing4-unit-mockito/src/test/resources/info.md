@@ -2,7 +2,7 @@ To run tests from cmd
  1. from root project
   $ ./gradlew :learn7-testing:testing4-unit-mockito:test
 
- 2. for this project
+ 2. from this project
   $ ../../gradlew test
 
 
@@ -20,8 +20,6 @@ To run tests from cmd
 4. ArgumentCaptor is used to capture the argument passed to the method ( see: PersonServiceTest )
    - we can verify the expected changes of the argument
 
-
-
 5. Spy vs Mock  ( see: SalesServiceTest )
    - Spy is a real object
       - used if the object is not interacting with any other services
@@ -31,10 +29,9 @@ To run tests from cmd
      - used if the object is interacting with other services
      - used if the object has side effect methods/functionalities
 
-
 6. Best Practices
    - try to mock as less as possible
-   - don't the verify the behavior of internal / third party libraries ( eg: JpaRepository )
+   - don't verify the behavior of internal / third party libraries ( eg: JpaRepository )
    -  always follow - AAA
       - Arrange, Act, Assert
 

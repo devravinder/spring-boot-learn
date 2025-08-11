@@ -14,7 +14,6 @@ Why test containers are needed?
 
      - to solve this, we need to run external services in isolation ( in containers ).
 
-
  2. Testing the real dependencies
      eg:
       - we can test the integration with real Postgres database

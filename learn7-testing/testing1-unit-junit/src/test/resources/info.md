@@ -8,5 +8,5 @@ To run tests from cmd
  1. from root project
   $ ./gradlew :learn7-testing:testing1-unit-junit:test
 
- 2. for this project
+ 2. from this project
   $ ../../gradlew test

@@ -18,8 +18,8 @@ public class PersonService {
         if(byEmail.isPresent()) {
             throw new RuntimeException("Person with email '"+person.getEmail()+"' already exists");
         }
-        repo.create(person);
-        return person;
+
+        return repo.create(person);
     }
 
     public Optional<Person> findById(Long id) {

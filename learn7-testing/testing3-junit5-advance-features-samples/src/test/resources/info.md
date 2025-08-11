@@ -2,7 +2,7 @@ To run tests from cmd
  1. from root project
   $ ./gradlew :learn7-testing:testing3-junit5-advance-features-samples:test
 
- 2. for this project
+ 2. from this project
   $ ../../gradlew test
 
 
@@ -17,10 +17,10 @@ Junit has some nice features
                 - this is useful to test data isolation, without any side effects
 
 3.   ( see: TestInstanceLifecycleDemoTest )
-   - @Tag ( to group tests while running )
+    - @Tag ( to group tests while running )
        - this is useful to run some test conditionally
           eg: run some tests only in development environment
-   - @DisplayName ( to show a meaningful name in test output )
+    - @DisplayName ( to show a meaningful name in test output )
 
 4. Conditional tests ( see: ConditionalTestExecutionDemoTest )
    - @Disabled ( to disable a test )
@@ -38,12 +38,11 @@ Junit has some nice features
    - @Nested ( to group tests in a Test instance with subclass - just for organization )
 
 7. Parameterized tests ( see: PersonServiceParameterizedTests )
-   - @ParameterizedTest  ( to mark a method as Parameterized test )
-   - @ValueSource ( to multiple values as test arguments) )
-   - @CsvSource ( to pass multiple object values as test arguments )
-   - @MethodSource ( to pass a method output as test arguments )
-
-
+    - @ParameterizedTest  ( to mark a method as Parameterized test )
+    - @ValueSource ( to multiple values as test arguments) )
+    - @CsvSource ( to pass multiple object values as test arguments )
+    - @MethodSource ( to pass a method output as test arguments )
+   
 8. Parallel execution ( see: junit-platform.properties )
    - we can run tests in parallel using threads or run sequentially in the same thread
    - to enable/disable parallel execution

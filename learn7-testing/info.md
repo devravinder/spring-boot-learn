@@ -12,7 +12,6 @@
           - Test Instance Lifecycle
           - Parameterized tests
 
-
 2. for integration testing
      - MockMvc  ( spring framework's , to test our own rest APIs )
      - restAssured  (3rd part,  to test our own rest APIs )
@@ -33,11 +32,9 @@
       - Flexibility across different protocols and complex testing scenarios is essential.
       - available for other languages as well
 
-
 3. for E2E testing
     - Cypress
     - Playwright
-
 
 4. for Performance Testing
     - Gatling
@@ -55,12 +52,10 @@
 
    2. if the application is interacting more with external services
        - then more integration testing
-       eg: complex micro services application with Redis, ElasticSearch, Kafka, Data Bases
-
+       eg: complex microservices application with Redis, ElasticSearch, Kafka, Data Bases
 
 2. Try to write more Unit tests for own services
 3. Try to mock the external services ( eg: API response from GitHub )
-
 
 4. Test Driven Development (TDD) Planning
    - Unit Tests:
@@ -73,15 +68,11 @@
      - Controller -> Service -> Repository -> DB/Queue
      - Mock external service API calls using WireMock/MockServer
 
-
-
-
 5. Always write
     more Unit tests > Integration tests > E2E tests
     bzc
        performance of Unit tests > Integration tests > E2E tests
        resource usage of Unit tests < Integration tests < E2E tests
-
 
 6. Always write
     Unit tests for

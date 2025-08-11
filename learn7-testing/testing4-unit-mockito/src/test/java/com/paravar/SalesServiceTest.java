@@ -46,7 +46,7 @@ class SalesServiceTest {
         assertThat(salesSummary.getSoldItemsCount()).isEqualTo(5);
         assertThat(salesSummary.getTotalRevenue()).isEqualTo(new BigDecimal("60.0"));
 
-        verify(salesReporter).generateSalesSummary(any());
+        verify(salesReporter).generateSalesSummary(any());// verify it is called ot not
     }
 
     @Test
