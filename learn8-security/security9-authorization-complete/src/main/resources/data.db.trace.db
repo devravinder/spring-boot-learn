@@ -1,0 +1,3 @@
+2025-08-12 22:31:56.509112+05:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "EMPLOYEE" not found; SQL statement:
+select e1_0.id,e1_0.manager_id,e1_0.password,e1_0.role,e1_0.username from employee e1_0 where e1_0.username=? [42102-232]

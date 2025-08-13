@@ -25,4 +25,5 @@ include 'learn8-security:security8-jwt-scopes'
 include 'learn8-security:security9-oauth2-basic:authorization-server'
 include 'learn8-security:security9-oauth2-basic:login'
 include 'learn8-security:security10-oauth2-webclient'
+include 'learn8-security:security9-authorization-complete'
 
