@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 public class AuthService {
 
     private final AuthenticationManager authenticationManager;
-    private final JwtEncoder encoder;
+    private final JwtEncoder jwtEncoder;
     private final ApplicationProperties properties;
 
     public String authenticate(LoginRequestCmd authRequest){
@@ -45,6 +45,6 @@ public class AuthService {
                 .build();
 
 
-        return this.encoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+        return this.jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
     }
 }

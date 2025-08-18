@@ -1,9 +1,7 @@
 package com.paravar.user;
 
-import com.paravar.employee.EmployeeRepository;
 import com.paravar.employee.EmployeeService;
 import lombok.AllArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

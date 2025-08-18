@@ -12,7 +12,7 @@ public class UserController {
     /*
 
     // if we are not using default jwt converter...then the AuthenticationPrincipal is Jwt
-    // and the Authentication is Jwt Authentication
+    // and the Authentication is JwtAuthentication
 
     @GetMapping("/me")
     public EmployeeDetails getCurrentUser(@AuthenticationPrincipal Jwt jwt, Authentication jwtAuthentication) {
@@ -31,7 +31,7 @@ public class UserController {
 
     /*
      We are suing custom jwt converter...which converts token
-      as UsernamePasswordAuthenticationToken & injects EmployeeDetails as AuthenticationPrincipal
+      as UsernamePasswordAuthenticationToken & injects *EmployeeDetails* as AuthenticationPrincipal
     * */
 
     @GetMapping("/me")

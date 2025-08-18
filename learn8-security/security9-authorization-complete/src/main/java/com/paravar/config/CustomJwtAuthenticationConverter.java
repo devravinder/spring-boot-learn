@@ -1,6 +1,5 @@
 package com.paravar.config;
 
-import com.paravar.user.EmployeeDetails;
 import com.paravar.user.EmployeeDetailsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
