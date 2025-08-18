@@ -27,7 +27,7 @@ public class EmployeeService {
 
     @Transactional(readOnly = true)
     public boolean isManagerOfEmployee(Long employeeId, Long managerId) {
-        EmployeeWithManagerDTO employee = repository.findByIdWithManagerId(employeeId).orElse(null);
+        EmployeeWithManagerDTO employee = repository.findByIdWithManager(employeeId).orElse(null);
         if (employee == null || employee.getManagerUsername() == null) {
             return false;
         }
@@ -45,7 +45,7 @@ public class EmployeeService {
     public Optional<EmployeeWithManagerDTO> getById(@PathVariable Long id) {
 
       //  return repository.findById(id);
-        return  repository.findByIdWithManagerId(id);
+        return  repository.findByIdWithManager(id);
     }
 
     @Transactional

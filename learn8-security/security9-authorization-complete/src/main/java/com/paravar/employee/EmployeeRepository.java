@@ -19,11 +19,21 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
 
     @Query("SELECT new com.paravar.employee.EmployeeWithManagerDTO(e.id, e.username, e.role, m.id, m.username, m.role) FROM Employee e LEFT JOIN e.manager m WHERE e.id = :id")
-    Optional<EmployeeWithManagerDTO> findByIdWithManagerId(@Param("id") Long id);
+    Optional<EmployeeWithManagerDTO> findByIdWithManager(@Param("id") Long id);
 
     /*
     we have disabled open-in-view, so Fetching Employee.manager will cause LazyLoadingInitialization error
       - so use DTO
+
+    * */
+
+
+    /*
+    Note:-
+     We can use
+        @EntityGraph(attributePaths = {"id"})
+
+      to fetch only few fields from nested objected...in our case manager
 
     * */
 
