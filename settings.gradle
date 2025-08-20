@@ -27,6 +27,7 @@ include 'learn8-security:jwt:jwt1-basic'
 include 'learn8-security:jwt:jwt2-basic-keys'
 include 'learn8-security:jwt:jwt3-scopes'
 include 'learn8-security:jwt:jwt4-roles'
+include 'learn8-security:jwt:jwt5-method-level-security'
 
 
 include 'learn8-security:security9-authorization-complete'
