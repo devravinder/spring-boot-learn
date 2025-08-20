@@ -1,0 +1,19 @@
+spring:
+
+
+
+app:
+  jwt:
+    publicKey: classpath:public.key
+    privateKey: classpath:private.key
+    issuer: spring-security-app
+    expiration: 5 # in seconds # total = expiration + clock skew
+
+server:
+  port: 8080
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    root: INFO
