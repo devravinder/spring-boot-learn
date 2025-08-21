@@ -1,0 +1,21 @@
+spring:
+
+app:
+  jwt:
+    secret: myVerySecureSecretKeyThatIsAtLeast256BitsLongForHMAC256Algorithm # Must be at least 256 bits (32 chars) for HS256
+    issuer: spring-security-app
+    expiration: 3 # in seconds # total = expiration + clock skew
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+    root: INFO
