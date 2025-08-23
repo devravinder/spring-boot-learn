@@ -29,10 +29,16 @@ include 'learn8-security:jwt:jwt3-scopes'
 include 'learn8-security:jwt:jwt4-roles'
 include 'learn8-security:jwt:jwt5-method-level-security'
 include 'learn8-security:jwt:jwt6-customization'
+include 'learn8-security:jwt:jwt7-employee-management-basic'
+include 'learn8-security:jwt:jwt8-employee-management'
+
+include 'learn8-security:oauth2:oauth2-basic:learn1-webclient'
+include 'learn8-security:oauth2:oauth2-basic:learn2-webclient-multiple'
+include 'learn8-security:oauth2:oauth2-basic:learn3-authorized-webclient'
+include 'learn8-security:oauth2:oauth2-basic:learn4-authorized-webclient-multiple'
 
 
-include 'learn8-security:security9-authorization-complete'
 include 'learn8-security:security10-oauth2:oauth2-basic:authorization-server'
 include 'learn8-security:security10-oauth2:oauth2-basic:login'
-include 'learn8-security:security10-oauth2:oauth2-webclient'
+include 'learn8-security:oauth2:oauth2-basic:oauth2-client'
 

@@ -1,6 +1,6 @@
 package com.paravar;
 
-import com.paravar.employees.EmployeeService;
+import com.paravar.employee.EmployeeService;
 import com.paravar.users.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;

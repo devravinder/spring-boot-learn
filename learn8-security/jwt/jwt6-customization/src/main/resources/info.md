@@ -9,6 +9,7 @@
         - extract CustomGrantedAuthority from roles ( claims )
        
 - using CustomAccessDeniedHandler & CustomAuthenticationEntryPoint for error handling
+- using custom PermissionEvaluator ( AccessControl )
 
 ## Note:-
 - we are not Implementing UserDetails 

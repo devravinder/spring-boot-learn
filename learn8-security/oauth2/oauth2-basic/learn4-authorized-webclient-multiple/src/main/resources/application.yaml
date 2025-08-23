@@ -1,0 +1,39 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: ${GITHUB_CLIENT_ID:Ov23liWMWsveZfZV5dxX}
+            client-secret: ${GITHUB_CLIENT_SECRET:636d189505d8511d4a8f41d2e3abc5af9272ab2a}
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/github
+            scope: repo,user
+
+          github-secondary:
+            client-id: ${GITHUB_CLIENT_ID:Ov23liNivi1jhkwdDg9r}
+            client-secret: ${GITHUB_CLIENT_SECRET:f202994f59df0b2f9429de3166c9b36a98839ec9}
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8080/login/oauth2/code/github-secondary
+            scope: repo,user
+
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
+
+          github-secondary:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: login
+server:
+  port: 8080
+
+github:
+  api:
+    base-url: https://api.github.com
+
+
