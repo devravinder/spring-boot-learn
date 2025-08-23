@@ -17,14 +17,13 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
 import java.util.Collections;
 
 @RestController
 @RequestMapping("/api/employees")
 @RequiredArgsConstructor
 @Slf4j
-public class EmployeeResource {
+class EmployeeResource {
 
     private final EmployeeQuery employeeQuery;
 

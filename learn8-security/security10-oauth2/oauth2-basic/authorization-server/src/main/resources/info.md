@@ -1,4 +1,4 @@
-1. We are spring security aouth2 authorization server.
+1. We are spring security oauth2 authorization server.
    This provides many things automatically.  
    For Users:
     1. Login Page (Form)  - for User to login

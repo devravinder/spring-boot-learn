@@ -20,7 +20,7 @@ import java.security.interfaces.RSAPublicKey;
 
 @Configuration
 @RequiredArgsConstructor
-public class JwtConfig {
+class JwtConfig {
 
     private final AppProperties properties;
 

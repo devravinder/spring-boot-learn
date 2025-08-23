@@ -15,7 +15,7 @@ import java.util.Collections;
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
-public class AuthResource {
+class AuthResource {
 
     private final AuthService authService;
 

@@ -6,7 +6,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 @Mapper
- public interface EmployeeMapper {
+interface EmployeeMapper {
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "manager.id", source = "managerId")
     @Mapping(target = "createdAt", ignore = true)

@@ -21,7 +21,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true, securedEnabled = true)
 @RequiredArgsConstructor
-public class SecurityConfig {
+class SecurityConfig {
 
     private final AuthEntryPoint authenticationEntryPoint;
     private final ResourceAccessDeniedHandler accessDeniedHandler;
