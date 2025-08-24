@@ -46,7 +46,9 @@
 10. Test Containers
 11. Message Queues
 12. Observability ( Grafana, Prometheus, Loki, tempo )
-13. Distributed locks & Job Scheduling
+13. Distributed locks & Job Scheduling 
+    - schedulers : quartz
+    - Distributed locks : shedlock with redis
 14. Resiliency: CircuitBreaker, Retry, RateLimiter, Bulkhead, TimeLimiter ( Resilience4j ) 
 15. oAuth2
 16. Docker & Kubernetes

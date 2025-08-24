@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSE Event Listener</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container{
+          display: flex;
+          flex-direction: row
+        }
+
+        .items {
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .item{
+          padding: 2px;
+         }
+    </style>
+    <script>
+        function triggerNotification() {
+            fetch('http://localhost:8080/trigger-event', {
+                method: 'GET'
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to trigger notification');
+                }
+              console.log("done")
+            })
+            .catch(error => {
+                console.log(error)
+            });
+        }
+    </script>
+</head>
+<body>
+<h1>Server-Sent Events</h1>
+<div class="container">
+    <div class="items" id="events"></div>
+    <div class="items" id="notifications">
+        <div>
+            <button onclick="triggerNotification()">Send Notification</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const eventDisplay = document.getElementById('events');
+    const source = new EventSource('http://localhost:8080/events');
+
+    source.onmessage = function(event) {
+        const eventElement = document.createElement('div');
+        eventElement.className = 'item';
+        eventElement.textContent = event.data;
+        eventDisplay.appendChild(eventElement);
+        eventDisplay.scrollTop = eventDisplay.scrollHeight; // Auto-scroll to latest event
+    };
+
+    source.onerror = function() {
+        const errorElement = document.createElement('div');
+        errorElement.className = 'item';
+        errorElement.style.color = 'red';
+        errorElement.textContent = 'Error: Connection to server lost';
+        eventDisplay.appendChild(errorElement);
+        source.close();
+    };
+</script>
+
+
+
+<script>
+    const notificationDisplay = document.getElementById('notifications');
+    const notificationSource = new EventSource('http://localhost:8080/notifications');
+
+    notificationSource.onmessage = function(event) {
+        const eventElement = document.createElement('div');
+        eventElement.className = 'event';
+        eventElement.textContent = event.data;
+        notificationDisplay.appendChild(eventElement);
+        notificationDisplay.scrollTop = notificationDisplay.scrollHeight; // Auto-scroll to latest event
+    };
+
+    source.onerror = function() {
+        const errorElement = document.createElement('div');
+        errorElement.className = 'event';
+        errorElement.style.color = 'red';
+        errorElement.textContent = 'Error: Connection to server lost';
+        notificationDisplay.appendChild(errorElement);
+        source.close();
+    };
+</script>
+
+</body>
+</html>

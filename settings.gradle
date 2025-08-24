@@ -60,3 +60,6 @@ include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token
 include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token:auth-client'
 include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token:resource-server'
 
+
+include 'learn9-sse'
+
