@@ -1,0 +1,13 @@
+server:
+  port: 9000
+
+logging:
+  level:
+    org.springframework.security: trace
+
+app:
+  jwt:
+    publicKey: classpath:public.key
+    privateKey: classpath:private.key
+    access-token-time-to-live: 60 # in seconds
+    refresh-token-time-to-live: 3600 # in seconds

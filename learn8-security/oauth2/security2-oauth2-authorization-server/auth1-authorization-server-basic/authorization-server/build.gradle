@@ -1,7 +1,0 @@
-dependencies {
-    implementation libs.org.springframework.security.spring.security.oauth2.authorization.server
-    implementation 'org.springframework.boot:spring-boot-starter-security'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    testImplementation 'org.springframework.security:spring-security-test'
-}

@@ -14,8 +14,31 @@
 
 ### OIDC vs Oauth2
 1. How OIDC extends OAuth2
-2. id_token vs access_token
-
+   - OAuth 2.0
+       - Purpose: 
+          - Authorization framework – it lets an app (client) access resources on behalf of a user.
+          - Auth 2.0 issues access tokens (opaque or JWT) that allow access to APIs (resource servers).
+          - eg: Google Drive Client access Google Drive
+       - Problem: 
+          - It doesn’t define how to authenticate a user. 
+             - user information may not exist in token
+          - You know a user authorized the app, but you don’t know who the user is.
+         
+   - OpenID Connect (OIDC):
+      - Purpose: 
+         - Authentication layer on top of OAuth 2.0.
+         - adds an identity layer by introducing:
+            - ID Token (always a JWT): contains user identity info like sub, email, name, etc.
+            - UserInfo Endpoint: REST API to fetch additional profile info.
+         - eg: when we 'Login With Google', that’s OIDC. 
+           - The app gets both:
+             - An ID Token → proves who the user is.
+             - An Access Token → allows access to Google APIs.
+   
+   - Imp:-
+     - Oauth2 = Authorization              = access token
+     - OIDC Authentication + Authorization = id token + access token
+     - OIDC is = oauth2 extension = (oauth2 + Authentication) = ( access token + (id token + userInfo api) )
 
 ## SSO
 

@@ -38,12 +38,25 @@ include 'learn8-security:oauth2:security1-oauth2-basic:learn3-authorized-webclie
 include 'learn8-security:oauth2:security1-oauth2-basic:learn4-authorized-webclient-multiple'
 
 
-include 'learn8-security:oauth2:security2-oauth2-authorization-server:auth1-authorization-server-basic:authorization-server'
-include 'learn8-security:oauth2:security2-oauth2-authorization-server:auth1-authorization-server-basic:authorization-client'
 
 
 
-include 'learn8-security:security10-oauth2:oauth2-basic:authorization-server'
-include 'learn8-security:security10-oauth2:oauth2-basic:login'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth1-auth-server-auto-config:auth-server'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth1-auth-server-auto-config:auth-client'
 
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth2-auth-server-manual:auth-server'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth2-auth-server-manual:auth-client'
+
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth3-resource-server:auth-server'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth3-resource-server:auth-client'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth3-resource-server:resource-server'
+
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth4-auth-server-keys:auth-server'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth4-auth-server-keys:auth-client'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth4-auth-server-keys:resource-server'
+
+
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token:auth-server'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token:auth-client'
+include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token:resource-server'
 
