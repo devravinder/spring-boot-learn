@@ -1,0 +1,53 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: producer-app
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+
+
+app:
+  rabbitmq:
+
+    basic:
+      textQueue: 'text-queue'
+      objQueue: 'obj-queue'
+
+    work:
+      workQueue: 'work-queue'
+
+
+    fan-out:
+      exchange: 'fan-out-exchange'
+      fanOutQueue1: 'fan-out-queue-1'
+      fanOutQueue2: 'fan-out-queue-2'
+
+
+    direct:
+      exchange: 'direct-exchange'
+      infoQueue: 'info-queue'
+      infoQueueKey: 'info'
+      errorQueue: 'error-queue'
+      errorQueueKey: 'error'
+
+
+    topic:
+      exchange: 'topic-exchange'
+      logsQueue: 'logs-queue'
+      logsQueuePattern: 'logs.#'
+                #  All logs: logs.info, logs.debug, logs.trace
+                # logs.error also
+      errorQueue: 'error-queue'
+      errorQueuePattern: '*.error'
+                       # Only errors: logs.error
+
+
+    rpc:
+      queueName: 'rpc-queue'
+
+

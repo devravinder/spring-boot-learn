@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  insta-cred-rabbitmq:
+    image: rabbitmq:4.0.5-management-alpine
+    container_name: insta-cred-rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=rabbitmq
+      - RABBITMQ_DEFAULT_PASS=rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672" # UI
+    healthcheck:
+      test: rabbitmq-diagnostics check_port_connectivity
+      interval: 30s
+      timeout: 30s
+      retries: 10
+    deploy:
+      resources:
+        limits:
+          memory: 500m
+
+
+
+# docker compose up -d
+
+# docker compose down

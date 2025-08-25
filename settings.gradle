@@ -63,3 +63,7 @@ include 'learn8-security:oauth2:security2-oauth2-auth-server:auth5-refresh-token
 
 include 'learn9-sse'
 
+
+include 'learn10-messaging-queues:queue1-rabbitmq:producer'
+include 'learn10-messaging-queues:queue1-rabbitmq:consumer'
+
