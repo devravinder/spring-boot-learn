@@ -1,33 +1,27 @@
 server:
-  port: 8081
+  port: 8082
 
 
 app:
   apache-kafka:
     consumer:
-      group-id: 'group-1'
+      group-id: 'group-3'
 
     error-handler-postfix: '.DLT'
         # DLT = Dead Letter Topic
 
 
-    basic:
-      topic: 'basic-topic'
-
-    partition:
-      topic: 'partitioned-topic'
-
-    key:
-      topic: 'keyed-topic'
-
     error:
       topic: 'error-topic'
 
 
+    transactional:
+      topic: 'transactional-topic'
+
 
 spring:
   application:
-    name: consumer-app
+    name: consumer-streams-transactions-app
   kafka:
     bootstrap-servers: localhost:19092
     consumer:
@@ -36,8 +30,14 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
+      enable-auto-commit: false
+      isolation-level: read_committed  # ensures consumers read only committed messages
+
     listener:
       missing-topics-fatal: false
+      ack-mode: manual_immediate
+
+
 
 
 

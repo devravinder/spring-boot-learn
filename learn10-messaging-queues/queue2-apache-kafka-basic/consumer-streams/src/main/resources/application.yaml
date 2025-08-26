@@ -1,0 +1,51 @@
+server:
+  port: 8082
+
+
+app:
+  apache-kafka:
+    consumer:
+      group-id: 'group-2'
+
+    error-handler-postfix: '.DLT'
+        # DLT = Dead Letter Topic
+
+
+    error:
+      topic: 'error-topic'
+
+    streams:
+      input-topic: 'input-topic'
+      output-topic: 'output-topic'
+
+
+spring:
+  application:
+    name: consumer-streams-transactions-app
+  kafka:
+    bootstrap-servers: localhost:19092
+    consumer:
+      group-id: ${app.apache-kafka.consumer.group-id}
+      auto-offset-reset: earliest
+      isolation-level: read_committed
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+    listener:
+      missing-topics-fatal: false
+
+    streams:
+      application-id: streams-app
+      commit.interval.ms: 1000
+      bootstrap-servers: localhost:19092
+      default:
+        key-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        value-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+
+
+
+
+

@@ -69,4 +69,7 @@ include 'learn10-messaging-queues:queue1-rabbitmq:consumer'
 
 include 'learn10-messaging-queues:queue2-apache-kafka-basic:producer'
 include 'learn10-messaging-queues:queue2-apache-kafka-basic:consumer'
+include 'learn10-messaging-queues:queue2-apache-kafka-basic:consumer-streams'
+include 'learn10-messaging-queues:queue2-apache-kafka-basic:consumer-transactions'
+
 

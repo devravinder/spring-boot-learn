@@ -2,9 +2,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.kafka:spring-kafka'
 
-    // for Strams
+    // for streams
     implementation 'org.apache.kafka:kafka-streams'
-
 
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 

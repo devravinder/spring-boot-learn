@@ -6,6 +6,26 @@ app:
   apache-kafka:
     basic:
       topic: 'basic-topic'
+
+    partition:
+      topic: 'partitioned-topic'
+
+    key:
+      topic: 'keyed-topic'
+
+    error:
+      topic: 'error-topic'
+
+
+    streams:
+      input-topic: 'input-topic'
+      output-topic: 'output-topic'
+
+
+    transactional:
+      topic: 'transactional-topic'
+
+
 spring:
   application:
     name: producer-app
@@ -14,4 +34,9 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+      # for transactional
+      transaction-id-prefix: tx-    # enables transactional producer
+      acks: all
+      retries: 3
 

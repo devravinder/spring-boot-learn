@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 public class BasicListener {
     @KafkaListener(topics = "${app.apache-kafka.basic.topic}", groupId = "${app.apache-kafka.consumer.group-id}")
     public void listenSimple(String message) {
-        System.out.println("Received : " + message);
+        System.out.println("1 Received 1: " + message);
     }
 }

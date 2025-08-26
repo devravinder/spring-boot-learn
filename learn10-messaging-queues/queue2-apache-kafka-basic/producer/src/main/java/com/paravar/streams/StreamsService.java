@@ -1,4 +1,4 @@
-package com.paravar.basic;
+package com.paravar.streams;
 
 import com.paravar.AppProperties;
 import lombok.RequiredArgsConstructor;
@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class BasicService {
+public class StreamsService {
     private final AppProperties appProperties;
     private final KafkaTemplate<String, String> kafkaTemplate;
 
-    public void sendBasicMessage(String message) {
-        kafkaTemplate.send(appProperties.basic().topic(), message);
-        System.out.println("Sent to " + appProperties.basic().topic() + " :" + message);
+    public void sendStream(String message) {
+        kafkaTemplate.send(appProperties.streams().inputTopic(), message);
+        System.out.println("Sent to streams " + appProperties.basic().topic() + " :" + message);
     }
 }

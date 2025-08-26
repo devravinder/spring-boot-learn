@@ -3,17 +3,18 @@ package com.paravar;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties(prefix = "app.apache-kafka")
-public record AppProperties(Basic basic, Work work, FanOut fanOut, Direct direct, Topic topic, Rpc rpc) {
+public record AppProperties(Basic basic, Partition partition, Key key, Error error, Streams streams, Transactional transactional) {
 
     public record Basic(String topic){}
 
-    public record Work(String workQueue){}
+    public record Partition(String topic){}
 
-    public record FanOut(String exchange,String fanOutQueue1, String fanOutQueue2){}
+    public record Key(String topic){}
 
-    public record Direct(String exchange,String infoQueue, String infoQueueKey, String errorQueue, String errorQueueKey){}
+    public record Error(String topic){}
 
-    public record Topic(String exchange,String logsQueue, String logsQueuePattern, String errorQueue, String errorQueuePattern){}
+    public record Streams(String inputTopic, String outputTopic){}
 
-    public record Rpc(String queueName){}
+    public record Transactional(String topic){}
+
 }
