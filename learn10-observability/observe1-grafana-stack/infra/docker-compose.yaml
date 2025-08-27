@@ -1,0 +1,44 @@
+version: '3.8'
+services:
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana-provisioning:/etc/grafana/provisioning
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin  # Change this in production
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus-data:/prometheus
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+#    volumes:
+#      - ./loki/loki.yaml:/etc/loki/local-config.yaml ( yet to pass )
+
+  tempo:
+    image: grafana/tempo:latest
+    ports:
+      - "3200:3200"  # HTTP API
+#      - "4317:4317"  # OTLP gRPC
+#      - "4318:4318"  # OTLP HTTP
+      - "9411:9411"  # Zipkin receiver
+    command: -config.file=/etc/tempo.yaml
+    volumes:
+      - ./tempo/tempo.yaml:/etc/tempo.yaml
+
+volumes:
+  grafana-data:
+  prometheus-data:

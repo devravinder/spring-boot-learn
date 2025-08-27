@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: product-service
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+#        include: '*'
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0  # 100% sampling for learning; reduce in prod
+
+#    propagation:
+#      type: B3 # Use W3C trace context instead of B3 ( B3, B3_MULTI, W3C )
+
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans  # Send traces to Tempo via Zipkin format
+  metrics:
+    metrics.tags.application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+logging:
+  level:
+    root: INFO
+    io.opentelemetry: INFO
+  pattern:
+    level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+    console: "%d{HH:mm:ss.SSS} [thread: %thread] %highlight(%-5level) [traceId: %X{traceId:-},spanId: %X{spanId:-}] [class: %logger{36}, message: %msg]%n"
+

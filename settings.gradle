@@ -73,3 +73,7 @@ include 'learn10-messaging-queues:queue2-apache-kafka-basic:consumer-streams'
 include 'learn10-messaging-queues:queue2-apache-kafka-basic:consumer-transactions'
 
 
+
+include 'learn10-observability:observe1-grafana-stack:product-service'
+include 'learn10-observability:observe1-grafana-stack:order-service'
+
