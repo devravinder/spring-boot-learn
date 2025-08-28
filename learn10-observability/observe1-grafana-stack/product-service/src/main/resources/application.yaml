@@ -33,5 +33,7 @@ logging:
     io.opentelemetry: INFO
   pattern:
     level: '%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]'
+    # how to format level
     console: "%d{HH:mm:ss.SSS} [thread: %thread] %highlight(%-5level) [traceId: %X{traceId:-},spanId: %X{spanId:-}] [class: %logger{36}, message: %msg]%n"
-
+      # how to format log message
+    # this will take high precedence over level

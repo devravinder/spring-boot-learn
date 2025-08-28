@@ -1,17 +1,31 @@
 # Grafana stack (Prometheus + Loki + Tempo + Grafana)
 
+## Prerequisites
+ - docker & docker-compose
+
+## Starting & stoping
+  - start
+    - 1st infra
+      - inside `infra` folder `run docker compose up -d`
+    - then start apps
+    
+  - stopping
+    - 1st stop apps
+    - then inside `infra` folder `run docker compose down` 
+
+
 ## Combinations
  - Logs:
-    - we are pushing logs to loki server
-        - using logstash + logback appender
+    - we are pushing logs to `loki` server
+        - using `logstash` + `logback appender`
    
  - Metrics
-   - we enabled the metrics endpoints using spring boot actuator
-   - we are sending the logs using micrometer-registry-prometheus to prometheus
+   - we enabled the metrics endpoints using `spring boot actuator`
+   - we are sending the logs using `micrometer-registry-prometheus` to `prometheus`
    
  - Tracing
-   - we are generating tracings using 'micrometer-tracing-bridge-otel'
-     - and pushing them to tempo using 'opentelemetry-exporter-zipkin'
+   - we are generating tracings using `micrometer-tracing-bridge-otel`
+     - and pushing them to `tempo` using `opentelemetry-exporter-zipkin`
 
 
 ## 
