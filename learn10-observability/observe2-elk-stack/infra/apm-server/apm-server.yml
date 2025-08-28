@@ -1,0 +1,8 @@
+apm-server:
+  host: "0.0.0.0:8200"
+  enabled: true
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+queue.mem.events: 4096

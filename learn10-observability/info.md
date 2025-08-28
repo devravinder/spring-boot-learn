@@ -121,4 +121,5 @@
    - ❌ Costly, vendor lock-in.
 
 ### Note:-
-
+1. Actuator is the default metrics generator
+2. logback is default logging framework

@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: product-service
+server:
+  port: 8081
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  metrics:
+    tags:
+      application: ${spring.application.name}
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+elastic:
+  apm:
+    enabled: true
+    server-url: http://localhost:8200 # http://host.docker.internal:8200  # APM Server endpoint
+    service-name: ${spring.application.name}
+    application-packages: com.paravar  # Replace with your package
+logging:
+  level:
+    root: INFO
+    co.elastic.apm: INFO
+  pattern:
+    level: '%5p [${spring.application.name:},%X{trace.id:-},%X{span.id:-}]'
+    console: "%d{HH:mm:ss.SSS} [thread: %thread] %highlight(%-5level) [traceId: %X{trace.id:-},spanId: %X{span.id:-}] [class: %logger{36}, message: %msg]%n"

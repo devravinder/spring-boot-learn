@@ -1,0 +1,6 @@
+- module: http
+  period: 15s
+  hosts: ["host.docker.internal:8080", "host.docker.internal:8081"]
+  path: /actuator/health  # Adjust to a custom metrics endpoint if available
+  metricsets: ["json"]
+  namespace: "custom_metrics"

@@ -1,0 +1,12 @@
+metricbeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.kibana:
+  host: "http://kibana:5601"
+  timeout: 60s
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+
+setup.dashboards.enabled: true

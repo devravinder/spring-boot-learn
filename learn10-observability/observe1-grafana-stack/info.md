@@ -3,7 +3,7 @@
 ## Prerequisites
  - docker & docker-compose
 
-## Starting & stoping
+## Starting & stopping
   - start
     - 1st infra
       - inside `infra` folder `run docker compose up -d`
@@ -17,7 +17,7 @@
 ## Combinations
  - Logs:
     - we are pushing logs to `loki` server
-        - using `logstash` + `logback appender`
+        - using  `logback appender`
    
  - Metrics
    - we enabled the metrics endpoints using `spring boot actuator`
