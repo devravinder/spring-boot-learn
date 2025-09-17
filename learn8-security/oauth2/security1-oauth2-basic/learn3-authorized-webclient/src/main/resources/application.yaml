@@ -6,6 +6,7 @@ spring:
           github:
             client-id: ${GITHUB_CLIENT_ID:Ov23liWMWsveZfZV5dxX}
             client-secret: ${GITHUB_CLIENT_SECRET:636d189505d8511d4a8f41d2e3abc5af9272ab2a}
+               # we have deleted this client secret
             redirect-uri: http://localhost:8080/login/oauth2/code/github
             scope: repo
             authorization-grant-type: authorization_code

@@ -6,6 +6,6 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:9000
-          jwk-set-uri: http://localhost:9000/oauth2/jwks
+          issuer-uri: http://localhost:7000
+          jwk-set-uri: http://localhost:7000/oauth2/jwks
           clock-skew: 30 # Reduced to 30 seconds

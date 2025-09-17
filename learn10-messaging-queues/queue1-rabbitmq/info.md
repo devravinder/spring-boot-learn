@@ -9,7 +9,7 @@
      
   - false:
       - when we publish message & queue is created
-      - these queues are volatile...won't exists after restart
+      - these queues are volatile...won't exist after restart
 
 
 ## Types

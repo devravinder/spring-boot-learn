@@ -31,6 +31,7 @@ public class AppController {
 
 
     @GetMapping
+    @ResponseBody
     public String greet(){
         return "Hello";
     }

@@ -1,5 +1,5 @@
 server:
-  port: 9000
+  port: 7000
 
 logging:
   level:
@@ -9,7 +9,7 @@ spring:
   security:
     oauth2:
       authorizationserver:
-        issuer: http://localhost:9000
+        issuer: http://localhost:7000
         client:
           oidc-client:
             registration:

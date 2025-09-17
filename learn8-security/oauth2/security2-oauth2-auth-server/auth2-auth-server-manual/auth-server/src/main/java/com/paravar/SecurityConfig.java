@@ -137,7 +137,7 @@ public class SecurityConfig {
 
     @Bean
     public AuthorizationServerSettings providerSettings() {
-        return AuthorizationServerSettings.builder().issuer("http://localhost:9000").build();
+        return AuthorizationServerSettings.builder().issuer("http://localhost:7000").build();
     }
 
     @Bean

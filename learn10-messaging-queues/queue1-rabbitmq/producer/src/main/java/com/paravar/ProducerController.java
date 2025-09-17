@@ -47,6 +47,7 @@ public class ProducerController {
 
     @GetMapping("/topic/{key}")
     /*
+    key =
       logs.info -> logs queue
       logs.debug -> logs queue
       logs.trace -> logs queue

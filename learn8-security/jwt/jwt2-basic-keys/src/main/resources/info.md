@@ -8,7 +8,7 @@
   
   - Note: for asymmetric encryption we use MAC(HMAC) algorithms
 
-- We use symmetric encryption when the authorization server & resource server are different
+- We use asymmetric encryption when the authorization server & resource server are different
 
 - we created JWT encoder & decoder beans using RSA keys
 

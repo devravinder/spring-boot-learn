@@ -15,7 +15,7 @@ import java.util.Map;
 public class BasicListener {
 
 
-    // change:  acknowledge-mode: manual to auto, and uncomment & see auto acknowledge
+    // change:  acknowledge-mode: `manual` to `auto`, and uncomment & see auto acknowledge
 
      /*
      - by default...auto acknowledgement is enabled...once after the message & received & processed

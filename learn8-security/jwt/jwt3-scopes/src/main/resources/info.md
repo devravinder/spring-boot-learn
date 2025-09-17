@@ -23,7 +23,7 @@
 
 ### Note:-
 
-- Both roles & scopes are should be added(converted) to Granted Authorities to use them for authentication
+- Both roles & scopes should be added(converted) to Granted Authorities to use them for authentication
   - but the default Jwt Converter supports only scopes conversion to authorities
   - to convert roles to authorities we use custom converter
 - if we support both role & scopes then 

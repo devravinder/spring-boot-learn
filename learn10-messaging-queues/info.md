@@ -29,7 +29,7 @@
 2. Data Retention
 
     - RabbitMQ
-      - Message is gone once acknowledged (unless requeued or persisted in a DLQ).
+      - Message is gone once acknowledged (unless re-queued or persisted in a DLQ).
     
       - Focus = reliable delivery to consumers.
     

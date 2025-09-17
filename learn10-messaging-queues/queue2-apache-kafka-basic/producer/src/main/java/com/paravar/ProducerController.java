@@ -59,7 +59,7 @@ public class ProducerController {
     @GetMapping("/transactional")
     public String transactional() {
         transactionalService.sendTransactional("Hi, hello, How are you?");
-        transactionalService.sendTransactional("group-key","Hi, hello, How are you?");
+        transactionalService.sendTransactional("group-key","HI, HELLO, How are you?");
         return "Transactions sent streams ";
     }
 }

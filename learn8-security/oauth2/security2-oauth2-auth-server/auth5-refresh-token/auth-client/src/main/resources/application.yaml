@@ -29,10 +29,10 @@ spring:
 
         provider:
           spring:
-            authorization-uri: http://localhost:9000/oauth2/authorize
-            token-uri: http://localhost:9000/oauth2/token
-            jwk-set-uri: http://localhost:9000/oauth2/jwks
-            user-info-uri: http://localhost:9000/userinfo
+            authorization-uri: http://localhost:7000/oauth2/authorize
+            token-uri: http://localhost:7000/oauth2/token
+            jwk-set-uri: http://localhost:7000/oauth2/jwks
+            user-info-uri: http://localhost:7000/userinfo
             user-name-attribute: sub
 
 

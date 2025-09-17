@@ -17,9 +17,12 @@
      
     - in our case we are using customJwtConverter
        - so we can access EmployeeDetails as principle
-       - Note: we are injecting(returning) 'UsernamePasswordAuthenticationToken' from customJwtConverter
+       - Note: 
+          - we are injecting(returning) 'UsernamePasswordAuthenticationToken' from customJwtConverter
               - bcz it'll accept UserDetails(EmployeeDetails) as principle
               - JwtAuthentication accepts only username as principle
+              - `this is not recommonded, but we can do`
+              - see `jwt8-employee-management` for proper implementation
  
 
 
