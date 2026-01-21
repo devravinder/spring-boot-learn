@@ -12,7 +12,6 @@ allprojects {
 
 
 subprojects { Project sub ->
-	{
 		apply plugin: 'java'
 		apply plugin: 'io.spring.dependency-management'
 		apply plugin: 'org.springframework.boot'
@@ -50,5 +49,17 @@ subprojects { Project sub ->
 				languageVersion = JavaLanguageVersion.of(23)
 			}
 		}
-	}
+
+       // skip empty projects
+		afterEvaluate {
+			boolean hasSource = file('src/main/java').exists() && !fileTree('src/main/java').include('**/*.java').isEmpty()
+			if (!hasSource) {
+				tasks.withType(org.springframework.boot.gradle.tasks.bundling.BootJar) {
+					enabled = false
+				}
+				tasks.withType(Jar) {
+					enabled = false
+				}
+			}
+		}
 }
