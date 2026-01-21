@@ -6,7 +6,7 @@
    - In microservices, it helps answer:
      - What’s happening? (Are services healthy?)
      - Why is it happening? (Root cause analysis)
-     -  Where is the problem? (Pinpoint bottlenecks, errors)
+     - Where is the problem? (Pinpoint bottlenecks, errors)
      
 2. Key Pillars of Observability (the 3 + 1 signals):
 
